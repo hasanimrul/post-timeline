@@ -1,0 +1,54 @@
+.sideBarContainer {
+    background-color: #03484D;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+.bottomNavContainer {
+    background-color: #0e3b3e;
+  }
+  
+  .bottomNavInner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+  }
+  
+  .hamburgerMenu {
+    display: flex;
+    align-items: center;
+  
+    gap: 0.5rem;
+  }
+  
+  .leftPart ul {
+    display: flex;
+    gap: 2rem;
+    list-style-type: none;
+  }
+  .leftPart {
+    display: flex;
+    align-items: center;
+  }
+  .leftPart ul li a {
+    color: #fff;
+  }
+  
+  .rightPart {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  @media only screen and (max-width: 1024px){
+    .bottomNavContainer  {
+        display: none;
+    }
+  }
+  
+@media only screen and (min-width: 1024px){
+    .sideBarContainer  {
+        display: none;
+    }
+  }

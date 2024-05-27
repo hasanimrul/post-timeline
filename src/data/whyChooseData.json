@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1,
+      "Title": "Excellent learning Oppurtunities",
+      "image": {
+        "data": {
+          "attributes": {
+            "url": "/assets/img/career/Why-Choose-Navana/excellent-learning-oppurtunities.jpg",
+            "width": 100,
+            "height": 100
+          }
+        }
+      }
+    },
+    {
+      "id": 2,
+      "Title": "Engaging Work Culture",
+      "image": {
+        "data": {
+          "attributes": {
+            "url": "/assets/img/career/Why-Choose-Navana/engaging-work-culture.jpg",
+            "width": 150,
+            "height": 150
+          }
+        }
+      }
+    },
+    {
+        "id": 3,
+        "Title": "Competitive Benefits",
+        "image": {
+          "data": {
+            "attributes": {
+              "url": "/assets/img/career/Why-Choose-Navana/competitive-benefits.jpg",
+              "width": 100,
+              "height": 100
+            }
+          }
+        }
+      }
+    
+  ]
+  

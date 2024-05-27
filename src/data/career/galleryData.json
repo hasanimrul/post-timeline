@@ -1,0 +1,76 @@
+[
+    {
+        "id" : 1,
+        "attributes" : {
+            "image" : {
+                "data" : {
+                    "attributes" : {
+                        "url" : "/assets/img/career/Gallery/hr-adda.jpg"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "id" : 2,
+        "attributes" : {
+            "image" : {
+                "data" : {
+                    "attributes" : {
+                        "url" : "/assets/img/career/Gallery/management-trainee.jpg"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "id" : 3,
+        "attributes" : {
+            "image" : {
+                "data" : {
+                    "attributes" : {
+                        "url" : "/assets/img/career/Gallery/picnic.jpg"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "id" : 6,
+        "attributes" : {
+            "image" : {
+                "data" : {
+                    "attributes" : {
+                        "url" : "/assets/img/career/Gallery/women-safety-training.jpg"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "id" : 5,
+        "attributes" : {
+            "image" : {
+                "data" : {
+                    "attributes" : {
+                        "url" : "/assets/img/career/Gallery/winter-bbq.jpg"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "id" : 4,
+        "attributes" : {
+            "image" : {
+                "data" : {
+                    "attributes" : {
+                        "url" : "/assets/img/career/Gallery/sales-conference.jpg"
+                    }
+                }
+            }
+        }
+    }
+    
+    
+]

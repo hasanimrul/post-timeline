@@ -1,0 +1,51 @@
+[
+    {
+      "number": 1,
+      "title": "Vibrant Environment",
+      "paragraph": "We foster a positive work culture where collaborative effort is the top priority. The needs of our colleagues' are well-assessed, and opinions are encouraged.",
+      "image": {
+        "data": {
+          "attributes": {
+            "url": "/assets/img/career/Culture/vibrant-environment.jpg"
+          }
+        }
+      }
+    },
+    {
+      "number": 2,
+      "title": "Diversity & Inclusion ",
+      "paragraph": "We inspire a culture that admires diverse viewpoints and nurtures intolerance against any discrimination.",
+      "image": {
+        "data": {
+          "attributes": {
+            "url": "/assets/img/career/Culture/diversity-inclusion.jpg"
+          }
+        }
+      }
+    },
+    {
+        "number": 3,
+        "title": "Future Readiness",
+        "paragraph": "We believe in equal opportunity. Our Women's Network is dedicated to the constant professional growth and leadership skills of our female employees.",
+        "image": {
+          "data": {
+            "attributes": {
+              "url": "/assets/img/career/Culture/future-readiness.jpg"
+            }
+          }
+        }
+      },
+      {
+        "number": 4,
+        "title": "Equal Opportunity",
+        "paragraph": "Our strategic investments in development programs ensure the workforce's future readiness. With roadmaps, we streamline operations and ensure a sustainable competitive edge.",
+        "image": {
+          "data": {
+            "attributes": {
+              "url": "/assets/img/career/Culture/equal-opportunity.jpg"
+            }
+          }
+        }
+      }
+  ]
+  

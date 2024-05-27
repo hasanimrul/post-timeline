@@ -1,0 +1,39 @@
+.footerContainer {
+    background-color: #393939; 
+    font-size: 13px; 
+}
+
+.footerInner {
+    padding: 2rem;
+}
+.footerWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    color: #fff;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.socialIcon {
+    display: flex;
+    gap: 1.5rem;
+}
+.blueText {
+    color: #00CAD7;
+    font-size: 20px;
+}
+
+.payments {
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+    
+}
+
+.footerBottom {
+    color: #fff;
+    background-color: #000;
+    font-size: 17px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
