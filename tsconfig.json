@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "public/animations.js", "src/templates/Main.jsx", "src/components/layouts/jobForm/CvSubmitPopup.js", "src/lib/MultiViewGoogleMap.js", "src/components/patterns/AllNews/NewsMasonry.tsx", "src/components/layouts/header/navbar/NavBar.jsx", "src/components/layouts/header/mobileMenu/Sidebar.jsx", "src/pages/index.jsx", "src/pages/_app.jsx", "src/pages/_document.jsx", "src/pages/contact.jsx", "src/pages/newsFeed.jsx", "src/pages/newsDetails.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "public/animations.js", "src/templates/Main.jsx", "src/components/layouts/jobForm/CvSubmitPopup.js", "src/lib/MultiViewGoogleMap.js", "src/components/patterns/AllNews/NewsMasonry.tsx", "src/components/layouts/header/navbar/NavBar.jsx", "src/components/layouts/header/mobileMenu/Sidebar.jsx", "src/pages/index.jsx", "src/pages/_app.jsx", "src/pages/_document.jsx", "src/pages/contact.jsx", "src/pages/newsFeed.jsx", "src/pages/newsDetails.jsx", "src/components/PostContent/PostContent.tsx", "src/components/PostInfo/PostInfo.tsx"],
   "exclude": ["node_modules"]
 }

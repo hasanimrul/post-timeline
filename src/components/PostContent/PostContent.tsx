@@ -1,3 +1,4 @@
+//@ts-ignore
 import React, { useEffect, useState } from "react";
 import PostInfo from "../PostInfo/PostInfo";
 import style from "./PostContent.module.css";
