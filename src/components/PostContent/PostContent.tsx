@@ -1,32 +1,45 @@
 import React, { useEffect, useState } from "react";
-
-import timelineData from "../../data/history/timelineData.json";
 import CompaniesInfo from "../PostInfo/PostInfo";
 import style from "./PostContent.module.css";
-import { fetchPosts, fetchUsers } from "../../../public/utils/api";
+import { fetchPosts, fetchUsers, fetchComments  } from "../../../public/utils/api";
 
 const HistoryContent = () => {
   const [activeHeadings, setActiveHeadings] = useState<string[]>([]);
   const [posts, setPosts] = useState([]);
   const [users, setUsers] = useState([]);
+  const [comments, setComments] = useState([]);
+  const [expandedPostId, setExpandedPostId] = useState(null);
 
-  console.log("posts", posts);
+  // console.log("posts", posts);
 
   useEffect(() => {
     const getData = async () => {
-      const postsData = await fetchPosts();
-      const usersData = await fetchUsers();
+      const [postsData, usersData, commentsData] = await Promise.all([
+        fetchPosts(),
+        fetchUsers(),
+        fetchComments()
+      ]);
 
-      // Map users by ID for quick lookup
+
+      // Map users and comments by ID for quick lookup
       const usersMap = usersData.reduce((data, user) => {
         data[user.id] = user;
         return data;
       }, {});
 
-      // Combine posts with user data
+      const commentsMap = commentsData.reduce((data, comment) => {
+        if (!data[comment.postId]) {
+          data[comment.postId] = [];
+        }
+        data[comment.postId].push(comment);
+        return data;
+      }, {});
+
+      // Combine posts with user and comments data
       const combinedData = postsData.map((post) => ({
         ...post,
         user: usersMap[post.userId],
+        comments: commentsMap[post.id] || []
       }));
 
       // Sort posts by ID in descending order
@@ -37,6 +50,10 @@ const HistoryContent = () => {
 
     getData();
   }, []);
+
+  const toggleComments = (postId) => {
+    setExpandedPostId(expandedPostId === postId ? null : postId);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,31 +89,36 @@ const HistoryContent = () => {
   };
 
   return (
-    <section className={style.historyContentSection}>
-      <ul className={`${style.timelineYear}`}>
-        {posts.map((post, i) => {
-          const isActive = activeHeadings[0] == post?.id;
-          return (
-            <li key={i}>
-              <a
-                href={`#${post.id}`}
-                className={`${isActive ? style.active : ""}`}
-                onClick={(e) => onPress(e)}
-              >
-                {post.id}
-              </a>
-            </li>
-          );
-        })}
-      </ul>
+    <section className={style.postContentSection}>
+      <div className={style.timelineIdWrap}>
+        <ul className={style.timelineId}>
+        <p className={style.headline}>Click the post ID below to see the details :-</p>
+          {posts.map((post, i) => {
+            const isActive = activeHeadings[0] === post?.id;
+            return (
+              <li key={i}>
+                <a
+                  href={`#${post?.id}`}
+                  className={`${isActive ? style.active : ""}`}
+                  onClick={(e) => onPress(e)}
+                >
+                  {post?.id}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
 
       <div className={style.timelineWrapper}>
         {posts?.map((data, i) => (
           <CompaniesInfo
             key={i}
-            id={data.id}
+            id={data?.id}
             data={data}
             activeHeadings={activeHeadings}
+            toggleComments={toggleComments}
+            expandedPostId={expandedPostId}
           />
         ))}
       </div>

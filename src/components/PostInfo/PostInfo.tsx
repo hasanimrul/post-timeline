@@ -4,25 +4,37 @@ import style from "./PostInfo.module.css";
 type TimelineDataProps = {
   data?: {
     body?: string;
-    id?: number;
+    comments: Array<{
+      body: string;
+      email: string;
+      id: number;
+      name: string;
+      postId: number;
+    }>;
+    id?: string;
     title?: string;
 
     user?: {
-      id: number;
+      id: string;
       name: string;
     };
   };
   activeHeadings?: string[];
+  toggleComments?: any;
+  expandedPostId?: number;
 };
 
 const CompaniesInfo: React.FC<TimelineDataProps> = ({
   data,
   activeHeadings,
+  toggleComments,
+  expandedPostId,
 }) => {
+  // console.log("data", data);
   return (
     <section
       id={data?.id}
-      className={`${style.companiesInfoSection} ${
+      className={`${style.postsInfoSection} ${
         activeHeadings?.includes(data?.id || "") ? style.middle : ""
       }`}
     >
@@ -100,22 +112,35 @@ const CompaniesInfo: React.FC<TimelineDataProps> = ({
           </defs>
         </svg>
       </div>
+
       <div id={data?.id} className={style.companiesInfoContent}>
-        {/* {data?.bgImage?.map((data, i) => (
-            <img
-              key={i}
-              className={style.companyImg}
-              src={data?.image?.data?.attributes?.url}
-              alt="image"
-            />
-          ))} */}
         <div className={style.infoContent} id={data?.title}>
           <h1>{data?.title}</h1>
           <p>{data?.body}</p>
         </div>
         <div className={style.userInfo}>
-          <p className="card-text">Name of User's -</p>
+          <p className={style.user}>By-</p>
           <h3>{data?.user?.name}</h3>
+        </div>
+        <div className={style.commentsWrapper}>
+          <button
+            onClick={() => toggleComments(data?.id)}
+            className={style.commentBtn}
+          >
+            {expandedPostId === data?.id ? "Hide Comments" : "Show Comments"}
+          </button>
+
+          {expandedPostId == data?.id && (
+            <div className={style.comments}>
+              {data?.comments.map((comment) => (
+                <div key={comment?.id} className={style.comment}>
+                  <h5>Comment No. {comment?.id}</h5>
+                  <h3>Name: {comment.name}</h3>
+                  <span> {comment.body}</span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>

@@ -1,23 +1,29 @@
-.historyContentSection {
+.postContentSection {
   padding-top: 2rem;
-  display: grid;
-  grid-template-columns: 1.2fr 5fr;
+  display: flex;
   align-items: start;
-  /* gap: 3rem; */
   padding-bottom: 5rem;
+  overflow: visible;
+  position: absolute;
+  
 }
-
-.timelineYear{
+.timelineIdWrap {
+  position: sticky;
+  top: .5rem; 
+  align-self: flex-start;
+  max-width: 18%;
+}
+.headline {
+  font-size: 1em;
+}
+.timelineId {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  position: sticky;
-  top: 0;
-  left: 0;
+  overflow: auto;
 }
 
-
-.timelineYear li {
+.timelineId li {
   padding: 0.5rem;
   font-size: 1em;
   border-right: 1px solid #404041;
@@ -25,67 +31,51 @@
 }
 
 .active {
-color: rgb(255, 255, 255) !important;
+  color: rgb(255, 255, 255) !important;
 }
 
-.ActiveColor{
-  color: yellow !important;
+.timelineId li a {
+  color: #5d5d5f;
 }
 
-.timelineYear li a{
-  color: #404041;
-}
-
-.timelineYear li a:hover  {
-  color: #F1F0F0;
+.timelineId li a:hover {
+  color: #f1f0f0;
   text-decoration: none;
 }
 
-.timelineWrapper {
-  position: relative;
-}
 
-.circleIconTop {
-  position: absolute;
-  top: -1rem;
-  left: 6.25rem;
-}
-
-.circleIconBottom {
-  position: absolute;
-  bottom: -0.9rem;
-  left: 6.25rem;
-}
-
-@media (max-width: 768px) {
-  .historyContentSection {
-    gap: 0rem;
+@media (max-width: 1024px) {
+  .postContentSection {
     flex-direction: column;
-    align-items: center;
-    padding-bottom: 5rem;
+    padding-top: 0;
   }
-  .historyContentSection ul{
+
+  .timelineIdWrap {
+    max-width: 100%;
+    top: -1rem;
+    z-index: 10;
+    display: none;
   }
-  .timelineYear{
+
+  
+  .timelineId {
     z-index: 99;
     background-color: rgb(12, 12, 12);
     flex-direction: row;
-      overflow-x: auto;
-      /* position: relative; */
-    /* overflow: hidden; */
+    
   }
-  .timelineYear li{
+
+  .timelineId li {
     font-size: 1rem;
     margin-right: 5px;
-    /* padding-right: 5px; */
   }
-  .circleIconTop{
+
+  .circleIconTop {
     left: 3.38rem;
   }
+
   .circleIconBottom {
     bottom: -0.9rem;
     left: 3.38rem;
   }
-  
-  
 }
