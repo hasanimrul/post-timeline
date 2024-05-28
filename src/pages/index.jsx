@@ -1,4 +1,4 @@
-import PostContent from "@/components/PostContent/PostContent";
+import PostContent from '../components/PostContent/PostContent'
 
 const Index = () => {
   return (
