@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import CompaniesInfo from "../PostInfo/PostInfo";
+import PostInfo from "../PostInfo/PostInfo";
 import style from "./PostContent.module.css";
 import { fetchPosts, fetchUsers, fetchComments  } from "../../../public/utils/api";
 
@@ -112,7 +112,7 @@ const HistoryContent = () => {
 
       <div className={style.timelineWrapper}>
         {posts?.map((data, i) => (
-          <CompaniesInfo
+          <PostInfo
             key={i}
             id={data?.id}
             data={data}
