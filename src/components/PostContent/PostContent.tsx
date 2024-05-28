@@ -80,7 +80,7 @@ const HistoryContent = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [posts]);
 
   const onPress = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
@@ -97,7 +97,7 @@ const HistoryContent = () => {
       <div className={style.timelineIdWrap}>
         <ul className={style.timelineId}>
           <p className={style.headline}>
-            Click the post ID below to see the details :-
+            Click the post ID below to see details :-
           </p>
           {posts.map((post, i) => {
             const isActive = activeHeadings[0] == post?.id;
