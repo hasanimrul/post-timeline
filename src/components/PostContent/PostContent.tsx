@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import PostInfo from "../PostInfo/PostInfo";
 import style from "./PostContent.module.css";
-import { fetchPosts, fetchUsers, fetchComments  } from "../../../public/utils/api";
+import {
+  fetchPosts,
+  fetchUsers,
+  fetchComments,
+} from "../../../public/utils/api";
 
 const HistoryContent = () => {
   const [activeHeadings, setActiveHeadings] = useState<string[]>([]);
@@ -17,9 +21,8 @@ const HistoryContent = () => {
       const [postsData, usersData, commentsData] = await Promise.all([
         fetchPosts(),
         fetchUsers(),
-        fetchComments()
+        fetchComments(),
       ]);
-
 
       // Map users and comments by ID for quick lookup
       const usersMap = usersData.reduce((data, user) => {
@@ -39,7 +42,7 @@ const HistoryContent = () => {
       const combinedData = postsData.map((post) => ({
         ...post,
         user: usersMap[post.userId],
-        comments: commentsMap[post.id] || []
+        comments: commentsMap[post.id] || [],
       }));
 
       // Sort posts by ID in descending order
@@ -92,7 +95,9 @@ const HistoryContent = () => {
     <section className={style.postContentSection}>
       <div className={style.timelineIdWrap}>
         <ul className={style.timelineId}>
-        <p className={style.headline}>Click the post ID below to see the details :-</p>
+          <p className={style.headline}>
+            Click the post ID below to see the details :-
+          </p>
           {posts.map((post, i) => {
             const isActive = activeHeadings[0] === post?.id;
             return (
