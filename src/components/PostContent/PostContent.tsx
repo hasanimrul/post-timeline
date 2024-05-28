@@ -100,7 +100,7 @@ const HistoryContent = () => {
             Click the post ID below to see the details :-
           </p>
           {posts.map((post, i) => {
-            const isActive = activeHeadings[0] === post?.id;
+            const isActive = activeHeadings[0] == post?.id;
             return (
               <li key={i}>
                 <a
