@@ -1,7 +1,7 @@
 .postContentSection {
   padding-top: 2rem;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   padding-bottom: 5rem;
   overflow: visible;
   position: absolute;
